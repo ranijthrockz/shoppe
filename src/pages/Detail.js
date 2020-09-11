@@ -6,7 +6,7 @@ function Detail({match}){
     const [Items,setItems]=useState({});
 
     useEffect( ()=> {
-        const [id]=useState(match.params.id);
+        const id= match.params.id;
         const getItems = async e => {
             try{
               const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
