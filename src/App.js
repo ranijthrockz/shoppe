@@ -7,20 +7,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
     const[recipes,setRecipes] = useState([]);
     const[searchval,setSearchVal] = useState('chicken');
-    const getRecipesOnload = async e => {
-        try{
-          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchval}`);
-          const data= await response.json();
-          setRecipes(data.meals);
-        }catch(err){
-            console.log(err.message);
-        }
-        };
+    
         const OnChangeInput = (val) => {
             setSearchVal(val);
             getRecipesOnload();
         }
     useEffect( ()=> {
+        const getRecipesOnload = async e => {
+            try{
+              const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchval}`);
+              const data= await response.json();
+              setRecipes(data.meals);
+            }catch(err){
+                console.log(err.message);
+            }
+            };
         getRecipesOnload();
       },[] );
     

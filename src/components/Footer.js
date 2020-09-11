@@ -16,10 +16,10 @@ function Footer(props){
               <h5>Informations</h5>
               <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25"/>
               <ul class="list-unstyled">
-                  <li><a href="">Link 1</a></li>
-                  <li><a href="">Link 2</a></li>
-                  <li><a href="">Link 3</a></li>
-                  <li><a href="">Link 4</a></li>
+                  <li><a href="!#">Link 1</a></li>
+                  <li><a href="!#">Link 2</a></li>
+                  <li><a href="!#">Link 3</a></li>
+                  <li><a href="!#">Link 4</a></li>
               </ul>
           </div>
 
@@ -27,10 +27,10 @@ function Footer(props){
               <h5>Others links</h5>
               <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25"/>
               <ul class="list-unstyled">
-                  <li><a href="">Link 1</a></li>
-                  <li><a href="">Link 2</a></li>
-                  <li><a href="">Link 3</a></li>
-                  <li><a href="">Link 4</a></li>
+                  <li><a href="!#">Link 1</a></li>
+                  <li><a href="!#">Link 2</a></li>
+                  <li><a href="!#">Link 3</a></li>
+                  <li><a href="!#">Link 4</a></li>
               </ul>
           </div>
 

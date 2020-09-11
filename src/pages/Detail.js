@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 
 function Detail({match}){
     const [Items,setItems]=useState({});
-    const getItems = async e => {
-        try{
-          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`);
-          const data= await response.json();
-          setItems(data.meals[0]);
-        }catch(err){
-            console.log(err.message);
-        }
-    };
+
+    
     useEffect( ()=> {
+        const getItems = async e => {
+            try{
+              const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`);
+              const data= await response.json();
+              setItems(data.meals[0]);
+            }catch(err){
+                console.log(err.message);
+            }
+        };
         getItems();
       },[] );
     
@@ -28,12 +30,12 @@ function Detail({match}){
          <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><Link to={`/`} >Home</Link></li>
-                 <li class="breadcrumb-item active"><a href="">{Items.strMeal}</a></li>
+                 <li class="breadcrumb-item active">{Items.strMeal}</li>
              </ol>
          </nav>
          <section class="jumbotron text-center">
   <div class="container">
-  <iframe width="750" height="315" src={`https://www.youtube.com/embed/=${getYouId(Items.strYoutube)}?playlist=${getYouId(Items.strYoutube)}&loop=1`}></iframe>
+  <iframe id="youtube" width="750" height="315" src={`https://www.youtube.com/embed/=${getYouId(Items.strYoutube)}?playlist=${getYouId(Items.strYoutube)}&loop=1`}></iframe>
       <h1 class="jumbotron-heading">{Items.strMeal}</h1>
       <p class="lead text-muted mb-0">{Items.strInstructions}</p>
   </div>
