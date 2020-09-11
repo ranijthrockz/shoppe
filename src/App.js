@@ -32,7 +32,7 @@ function App() {
             }
             };
         getRecipesOnload();
-      },[] );
+      },[searchval] );
     
       const getRecipes = async e => {
           try{

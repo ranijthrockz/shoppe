@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
      return(
         <div class="col-12 col-md-6 col-lg-4">
         <div class="card">
-            <img class="card-img-top" src={props.meals.strMealThumb} alt="Card image cap"/>
+            <img class="card-img-top" src={props.meals.strMealThumb} alt={props.meals.strMeal} />
             <div class="card-body">
                 <h4 class="card-title"><a href="product.html" title="View Product">{props.meals.strMeal}</a></h4>
                 <p class="card-text"></p>

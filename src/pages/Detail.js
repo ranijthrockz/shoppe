@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 
 function Detail({match}){
     const [Items,setItems]=useState({});
-
+    const id= match.params.id;
     useEffect( ()=> {
-        const id= match.params.id;
         const getItems = async e => {
             try{
               const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -17,7 +16,7 @@ function Detail({match}){
             }
         };
         getItems();
-      },[] );
+      },[id] );
     
     const getYouId = (url) => {
         const getVideoId = require('get-video-id');
