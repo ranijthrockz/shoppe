@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 function Detail({match}){
     const [Items,setItems]=useState({});
-
+    const [id]=useState(match.params.id);
     
     useEffect( ()=> {
         const getItems = async e => {
             try{
-              const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`);
+              const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
               const data= await response.json();
               setItems(data.meals[0]);
             }catch(err){
