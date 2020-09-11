@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function Detail({match}){
     const [Items,setItems]=useState({});
-    const [id]=useState(match.params.id);
-    
+
     useEffect( ()=> {
+        const [id]=useState(match.params.id);
         const getItems = async e => {
             try{
               const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -35,7 +35,7 @@ function Detail({match}){
          </nav>
          <section class="jumbotron text-center">
   <div class="container">
-  <iframe id="youtube" width="750" height="315" src={`https://www.youtube.com/embed/=${getYouId(Items.strYoutube)}?playlist=${getYouId(Items.strYoutube)}&loop=1`}></iframe>
+  <iframe title="youtube" width="750" height="315" src={`https://www.youtube.com/embed/=${getYouId(Items.strYoutube)}?playlist=${getYouId(Items.strYoutube)}&loop=1`}></iframe>
       <h1 class="jumbotron-heading">{Items.strMeal}</h1>
       <p class="lead text-muted mb-0">{Items.strInstructions}</p>
   </div>
