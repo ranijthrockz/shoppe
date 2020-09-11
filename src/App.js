@@ -12,7 +12,6 @@ function App() {
             setSearchVal(val);
             getRecipesOnload();
         }
-    useEffect( ()=> {
         const getRecipesOnload = async e => {
             try{
               const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchval}`);
@@ -21,8 +20,15 @@ function App() {
             }catch(err){
                 console.log(err.message);
             }
-            };
-        getRecipesOnload();
+            };  
+    useEffect( ()=> {
+        try{
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchval}`);
+            const data= await response.json();
+            setRecipes(data.meals);
+          }catch(err){
+              console.log(err.message);
+          }
       },[] );
     
       const getRecipes = async e => {
