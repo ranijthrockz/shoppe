@@ -34,7 +34,9 @@ function Detail({match}){
          </nav>
          <section class="jumbotron text-center">
   <div class="container">
+  <div class="col-12">
   <iframe title="youtube" width="750" height="315" src={`https://www.youtube.com/embed/=${getYouId(Items.strYoutube)}?playlist=${getYouId(Items.strYoutube)}&loop=1`}></iframe>
+  </div>
       <h1 class="jumbotron-heading">{Items.strMeal}</h1>
       <p class="lead text-muted mb-0">{Items.strInstructions}</p>
   </div>

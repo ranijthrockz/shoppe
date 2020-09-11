@@ -69,3 +69,8 @@ footer a {
   top: 0;
   z-index: 100;
 }    
+.iframe{
+  width: 62%;
+    height: 450px;
+    margin: 0 auto;
+}
